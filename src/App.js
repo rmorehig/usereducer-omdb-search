@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Movie from "./components/Movie";
 import Search from "./components/Search";
 
-const MOVIE_API_URL = "https://www.omdbapi.com/?s=star+wars&apikey=4a3b711b";
+const MOVIE_API_URL = `${process.env.REACT_APP_MOVIE_API_URL}star+wars`;
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +25,7 @@ const App = () => {
     setIsLoading(true);
     setErrorMessage(null);
     const response = await fetch(
-      `https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`
+      `${process.env.REACT_APP_MOVIE_API_URL}${searchValue}`
     );
     const data = await response.json();
     data.Response === "True"
