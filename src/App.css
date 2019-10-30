@@ -24,8 +24,6 @@
   font-size: large;
 }
 
-/* new css for movie component */
-
 * {
   box-sizing: border-box;
 }
@@ -36,8 +34,10 @@
   flex-direction: row;
 }
 
-.App-header h2 {
+.App-header a {
   margin: 0;
+  text-decoration: none;
+  color: white;
 }
 
 .add-movies {
@@ -55,7 +55,7 @@
   max-width: 25%;
 }
 
-.errorMessage {
+.error {
   margin: auto;
   font-weight: bold;
   color: rgb(161, 15, 15);
