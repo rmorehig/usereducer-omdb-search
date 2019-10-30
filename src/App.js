@@ -24,18 +24,14 @@ const App = () => {
   const search = async searchValue => {
     setIsLoading(true);
     setErrorMessage(null);
-
     const response = await fetch(
       `https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`
     );
     const data = await response.json();
-    if (data.Response === "True") {
-      setMovies(data.Search);
-      setIsLoading(false);
-    } else {
-      setErrorMessage(data.Error);
-      setIsLoading(false);
-    }
+    data.Response === "True"
+      ? setMovies(data.Search)
+      : setErrorMessage(data.Error);
+    setIsLoading(false);
   };
 
   return (
